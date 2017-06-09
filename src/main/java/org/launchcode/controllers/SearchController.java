@@ -22,6 +22,7 @@ public class SearchController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
+        //model binding with the forms/SearchForm
         model.addAttribute(new SearchForm());
         return "search";
     }

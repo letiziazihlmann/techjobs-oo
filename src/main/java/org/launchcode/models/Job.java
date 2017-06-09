@@ -8,6 +8,7 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
+    //each of these is its own class
     private String name;
     private Employer employer;
     private Location location;
@@ -22,7 +23,7 @@ public class Job {
     public Job(String aName, Employer aEmployer, Location aLocation,
                PositionType aPositionType, CoreCompetency aSkill) {
 
-        this();
+        this(); //initializes the above method so that there is always an id associated
 
         name = aName;
         employer = aEmployer;
@@ -33,26 +34,32 @@ public class Job {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Employer getEmployer() {
+
         return employer;
     }
 
     public void setEmployer(Employer employer) {
+
         this.employer = employer;
     }
 
     public Location getLocation() {
+
         return location;
     }
 
     public void setLocation(Location location) {
+
         this.location = location;
     }
 
@@ -61,18 +68,22 @@ public class Job {
     }
 
     public void setPositionType(PositionType positionType) {
+
         this.positionType = positionType;
     }
 
     public CoreCompetency getCoreCompetency() {
+
         return coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
+
         this.coreCompetency = coreCompetency;
     }
 
     public int getId() {
+
         return id;
     }
 
