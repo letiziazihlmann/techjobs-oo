@@ -43,7 +43,26 @@ public class JobController {
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
 
-        return "";
+        Job newJob = new Job();
+
+        if (errors.hasErrors()){
+            return "new-jobs";
+        }
+
+        model.addAttribute("job", newJob);
+
+        newJob.setName(jobForm.getName());
+        newJob.setEmployer(jobData.getEmployers().findById(jobForm.getEmployerId()));
+        //location
+        newJob.setLocation(jobData.getLocations().findById(jobForm.getLocationId()));
+        //positiontype
+        newJob.setPositionType(jobData.getPositionTypes().findById(jobForm.getPositionTypeId()));
+        //core comp
+        newJob.setCoreCompetency(jobData.getCoreCompetencies().findById(jobForm.getCoreCompetencyId()));
+        //set the job
+        jobData.add(newJob);
+
+        return "redirect:/job?id=" + newJob.getId();
 
     }
 }
